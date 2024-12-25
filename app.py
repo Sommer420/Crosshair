@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QVBoxLayout, QLabel, QSlider, QCheckBox, QWidget
 )
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPixmap, QFont
+from PyQt5.QtGui import QPixmap, QFont, QIcon
 
 
 def resource_path(relative_path):
@@ -20,6 +20,7 @@ class CrosshairApp(QMainWindow):
 
         self.setWindowTitle("Custom Crosshair | Sommer")
         self.setGeometry(100, 100, 400, 150)
+        self.setWindowIcon(QIcon(resource_path("icon.ico")))
 
         self.set_discord_theme()
 
@@ -39,7 +40,7 @@ class CrosshairApp(QMainWindow):
         self.size_slider.setMinimum(10)
         self.size_slider.setMaximum(100)
         self.size_slider.setValue(16)
-        self.size_slider.setTickInterval(1)
+        self.size_slider.setTickInterval(2)
         self.size_slider.setStyleSheet(
             """
             QSlider::groove:horizontal {
